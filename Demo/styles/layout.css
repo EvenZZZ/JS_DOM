@@ -74,3 +74,16 @@ article img {
 	outline-width: .1em;
 	outline-style: solid;
 }
+
+#slideshow {
+	width: 180px;
+	height: 240px;
+	position: relative;
+	overflow: hidden;
+}
+
+#preview {
+	position: absolute;
+	border-width: 0px;
+	outline-width: 0;
+}

@@ -88,4 +88,77 @@ function moveElement(elementID,final_x,final_y,interval){
   elem.movement = setTimeout(repeat,interval);
 }
 
+function prepareSlideshow(){
+  if (!document.getElementsByTagName) return false;
+  if (!document.getElementById) return false;
+  if (!document.getElementById("intro")) return false;
+  var intro = document.getElementById("intro");
+  var slideshow = document.createElement("div");
+  slideshow.setAttribute("id","slideshow");
+  var preview = document.createElement("img");
+  preview.setAttribute("src","images/Eason_all.jpg");
+  preview.setAttribute("alt","a glimpse of what awaits you");
+  preview.setAttribute("id","preview");
+  slideshow.appendChild(preview);
+  insertAfter(slideshow,intro);
+
+  var links = document.getElementsByTagName("a");
+  var destination;
+  for (var i=0; i<links.length; i++){
+    links[i].onmouseover = function(){
+      destination = this.getAttribute("href");
+      if (destination.indexOf("index.html") != -1){
+        moveElement("preview",0,0,5);
+      }
+      if (destination.indexOf("about.html") != -1){
+        moveElement("preview",-180,0,5);
+      }
+      if (destination.indexOf("photos.html") != -1){
+        moveElement("preview",-360,0,5);
+      }
+      if (destination.indexOf("live.html") != -1){
+        moveElement("preview",-540,0,5);
+      }
+      if (destination.indexOf("contact.html") != -1){
+        moveElement("preview",-720,0,5);
+      }
+    }
+  }
+}
+
+function showSection(id){
+  var sections = document.getElementsByTagName("section");
+  for (var i=0; i<sections.length; i++){
+    if (sections[i].getAttribute("id") != id) {
+      sections[i].style.display = "none";
+    }
+    else{
+      sections[i].style.display = "block";
+    }
+  }
+}
+
+function prepareInternalnav(){
+  if (!document.getElementById) return false;
+  if (!document.getElementsByTagName) return false;
+  var articles = document.getElementsByTagName("article");
+  if (articles.length == 0) return false;
+  var navs = articles[0].getElementsByTagName("nav");
+  if (navs.length == 0) return false;
+  var nav = navs[0];
+  var links = nav.getElementsByTagName("a");
+  for (var i=0; i<links.length; i++){
+    var sectionId = links[i].getAttribute("href").split("#")[1];
+    if (!document.getElementById(sectionId)) continue;
+    document.getElementById(sectionId).style.display = "none";
+    links[i].destination = sectionId;
+    links[i].onclick = function(){
+      showSection(this.destination);
+      return false;
+    }
+  }
+}
+
 addLoadEvent(highlightPage);
+addLoadEvent(prepareSlideshow);
+addLoadEvent(prepareInternalnav);
