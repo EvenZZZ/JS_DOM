@@ -87,3 +87,7 @@ article img {
 	border-width: 0px;
 	outline-width: 0;
 }
+
+#imagegallery li{
+	display: inline;
+}
