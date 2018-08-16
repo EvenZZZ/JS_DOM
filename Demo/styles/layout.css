@@ -75,6 +75,34 @@ article img {
 	outline-style: solid;
 }
 
+td {
+	padding: 0.5em 3em;
+}
+
+th {
+	color: #edc;
+	background-color: #455;
+}
+
+tr td {
+	color: #233;
+	background-color: #eb6;
+}
+
+dl {
+	overflow: hidden;
+}
+
+dt {
+	float: left;
+}
+
+dd {
+	float: left;
+}
+
+
+
 #slideshow {
 	width: 180px;
 	height: 240px;
