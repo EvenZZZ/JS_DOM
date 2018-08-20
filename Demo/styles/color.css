@@ -84,6 +84,9 @@ tr.highlight td {
 	background-color: #cba;
 }
 
+input.placeholder {
+	color: gray;
+}
 
 #imagegallery a{
 	background-color: transparent;
