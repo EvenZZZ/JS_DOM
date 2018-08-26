@@ -10,7 +10,7 @@
 <body>
 	<header>
 		<div>
-		<img src="images/Eason1.jpg" alt="Eason Chan">
+			<img src="images/Eason1.jpg" alt="Eason Chan">
 		</div>
 		<nav>
 			<ul>
@@ -23,24 +23,24 @@
 		</nav>
 	</header>
 	<article>
-	<h1>Contact to Eason</h1>
-	<form method="post" action="submit.html">
-		<fieldset>
-			<p>
-				<label for="name">Name:</label>
-				<input type="text" id="name" name="name" value="Your Name" required="required" />
-			</p>
-			<p>
-				<label for="email">Email:</label>
-				<input type="email" id="email" name="email" value="Your email address" required="required" />
-			</p>
-			<p>
-				<label for="message">Message:</label>
-				<textarea cols="45" rows="7" id="message" name="message" required="required" />Write your message here:</textarea>
-			</p>
-			<input type="submit" value="Send" />
-		</fieldset>
-	</form>
+		<h1>Contact to Eason</h1>
+		<form method="post" action="submit.html">
+			<fieldset>
+				<p>
+					<label for="name">Name:</label>
+					<input type="text" id="name" name="name" value="Your name" class="required" />
+				</p>
+				<p>
+					<label for="email">Email:</label>
+					<input type="text" id="email" name="email" value="Your email address" class="email required" />
+				</p>
+				<p>
+					<label for="message">Message:</label>
+					<textarea cols="45" rows="7" id="message" name="message" class="required">Write your message here.</textarea>
+				</p>
+				<input type="submit" value="Send" />
+			</fieldset>
+		</form>
 	</article>
 </body>
 </html>
